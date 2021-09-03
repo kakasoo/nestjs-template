@@ -1,6 +1,5 @@
 import { Controller, Get, Logger, Req } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Cookie } from './decorators/cookie.decorator';
 
 @Controller()
 export class AppController {
@@ -8,7 +7,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(@Cookie() cookie, @Req() req): string {
+  getHello(): string {
+    this.logger.log('getHello called.');
     return this.appService.getHello();
   }
 }

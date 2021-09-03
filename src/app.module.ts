@@ -15,7 +15,7 @@ import { CustomLoggerModule } from './settings/logger/logger.module';
     }),
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ['.development.env'],
+      envFilePath: ['.development.env', '.production.env'],
     }),
     CustomLoggerModule,
     ApiModule,
