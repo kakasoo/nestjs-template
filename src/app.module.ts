@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ChatModule } from './gateways/chat/chat.module';
 import { ApiModule } from './resources/api.module';
 import { CustomLoggerModule } from './settings/logger/logger.module';
 
@@ -19,6 +20,7 @@ import { CustomLoggerModule } from './settings/logger/logger.module';
     }),
     CustomLoggerModule,
     ApiModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [
